@@ -9,7 +9,6 @@ class TransfertChapChapScraper extends BaseScraper {
       const { browser: newBrowser, page } = await this.initBrowser();
       browser = newBrowser;
 
-      // Active les logs de la console du navigateur
       page.on('console', msg => logger.info('Console du navigateur:', msg.text()));
 
       logger.info('📄 Navigation vers transfertchapchap.com...');
@@ -19,11 +18,9 @@ class TransfertChapChapScraper extends BaseScraper {
       });
       logger.info('✅ Page chargée');
 
-      // Attendre que le formulaire soit complètement chargé
       logger.info('⏳ Attente du chargement complet du formulaire...');
       await page.waitForSelector('form', { timeout: 30000 });
       
-      // Debug des sélecteurs disponibles
       const formElements = await page.evaluate(() => {
         const form = document.querySelector('form');
         const formFound = form ? 'oui' : 'non';

@@ -61,7 +61,7 @@ class DatabaseService {
           rate.from_currency,
           rate.to_currency,
           rate.rate
-        ], function(err) {  // Utiliser function() pour avoir accès à this.lastID
+        ], function(err) { 
           if (err) {
             logger.error('Erreur lors de l\'insertion:', err);
             reject(err);

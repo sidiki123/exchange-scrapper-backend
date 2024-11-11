@@ -18,7 +18,6 @@ class TapTapSendScraper extends BaseScraper {
       });
       logger.info('✅ Page chargée');
 
-      // Attendre et sélectionner le Canada
       logger.info('🔍 Recherche du sélecteur pays source...');
       await page.waitForSelector('#origin-currency', { timeout: 30000 });
       
@@ -35,7 +34,6 @@ class TapTapSendScraper extends BaseScraper {
       });
       await page.delay(3000);
       
-      // Vérifier la sélection
       const selectedOrigin = await page.evaluate(() => {
         const select = document.querySelector('#origin-currency');
         return select.options[select.selectedIndex].text;

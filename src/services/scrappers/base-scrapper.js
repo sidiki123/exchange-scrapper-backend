@@ -16,7 +16,6 @@ class BaseScraper {
     await page.setViewport({ width: 1920, height: 1080 });
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36');
 
-    // Ajouter une méthode d'attente personnalisée à la page
     page.delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     return { browser, page };

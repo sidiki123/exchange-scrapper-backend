@@ -1,4 +1,3 @@
-// src/app.js
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -159,7 +158,7 @@ const server = app.listen(port, () => {
   `);
 });
 
-// Gestion gracieuse de l'arrêt
+// Gestion de l'arrêt
 const handleShutdown = async (signal) => {
   logger.info(`Signal ${signal} reçu. Arrêt gracieux...`);
   
